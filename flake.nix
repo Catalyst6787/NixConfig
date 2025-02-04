@@ -6,7 +6,7 @@
   };
   outputs = { self, nixpkgs, ... }@inputs: {
     # "nixos" should be the hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nix-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # import stuff here
