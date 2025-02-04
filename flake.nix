@@ -10,7 +10,7 @@
       system = "x86_64-linux";
       modules = [
         # import stuff here
-        ./configuration.nix
+        ./laptop-nix/configuration.nix
       ];
     };
 
