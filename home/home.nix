@@ -19,6 +19,7 @@
     shellAliases = {
       g = "git";
       gc = "gcc -g -Wall -Wextra -Werror";
+      rs = "sudo nixos-rebuild switch --flake ~/nix"; # expects flake to be in /home/user/nix
       no = "echo 'FUCK OFF'";
     };
   };
