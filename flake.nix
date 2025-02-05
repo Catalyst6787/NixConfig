@@ -10,11 +10,11 @@
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       #v-- 'nixos' being the hostname
-      nixos = nixpkgs.lib.nixosSystem {
+      nix-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           # import stuff here
-          ./laptop-nix/configuration.nix
+          ./nix-laptop/configuration.nix
 
           home-manager.nixosModules.home-manager
           {
