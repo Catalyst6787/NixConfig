@@ -15,6 +15,7 @@
         modules = [
           # import stuff here
           ./nix-laptop/configuration.nix
+	  ./gui/gui.nix
 
           home-manager.nixosModules.home-manager
           {
