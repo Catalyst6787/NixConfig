@@ -2,18 +2,29 @@
   description = "nix laptop flake";
   inputs = {
     # NixOS official unstable branch
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, ... }@inputs: {
-    # "nixos" should be the hostname
-    nixosConfigurations.nix-laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # import stuff here
-        ./laptop-nix/configuration.nix
-      ];
-    };
 
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+    nixosConfigurations = {
+      #v-- 'nixos' being the hostname
+      nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # import stuff here
+          ./laptop-nix/configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            home-manager.users.oldcat = import ./home/home.nix;
+          }
+        ];
+      };
+    };
   };
-  
 }
