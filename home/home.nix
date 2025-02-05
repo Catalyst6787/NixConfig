@@ -6,6 +6,9 @@
   
   home.packages = with pkgs; [
     fastfetch
+    bemenu
+    wofi
+    fuzzel
   ];
 
   programs = {
@@ -38,6 +41,20 @@
 	set nowrap
       '';
     };
+    fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+	  terminal = "${pkgs.kitty}/bin/kitty";
+	  layer = "overlay";
+	};
+        colors.background = "6272a4ff";
+	colors.text = "282A36ff";
+	colors.promt = "282A36ff";
+      };
+    };
+    # some other programs
+
   };
 
   home.stateVersion = "24.11";
