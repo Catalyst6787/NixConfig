@@ -58,15 +58,15 @@
   };
   gtk.enable = true;
   gtk.theme = {
-    name = "Arc-Dark";
+    name = "dracula-theme";
     package = pkgs.arc-theme;
   };
 
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "WhiteSur-cursors";
-    package = pkgs.whitesur-cursors;
+    name = "BreezeX-RosePine-Linux";
+    package = pkgs.rose-pine-cursor;
     size = 24;
   };
 
