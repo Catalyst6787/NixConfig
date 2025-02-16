@@ -56,6 +56,19 @@
     # some other programs
 
   };
+  gtk.enable = true;
+  gtk.theme = {
+    name = "Arc-Dark";
+    package = pkgs.arc-theme;
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "WhiteSur-cursors";
+    package = pkgs.whitesur-cursors;
+    size = 24;
+  };
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
