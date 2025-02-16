@@ -66,6 +66,21 @@
   
   programs.fish.enable = true;
   services.dbus.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
+      vpl-gpu-rt
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  #hardware.pulseaudio.enable = true;
+  services.blueman.enable = true;
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
