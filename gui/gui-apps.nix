@@ -7,5 +7,7 @@
     librewolf
     stremio
     spotify
+    freetube
+    gparted
   ];
 }
