@@ -2,12 +2,13 @@
 
 {
   programs.hyprland.enable = true;
-  environment.systemPackages = [
-    pkgs.banana-cursor
-    pkgs.kitty
-    pkgs.librewolf
-    pkgs.hyprcursor
-    pkgs.hyprpolkitagent
+  environment.systemPackages = with pkgs; [
+    banana-cursor
+    kitty
+    librewolf
+    hyprcursor
+    hyprpolkitagent
+    waybar
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
