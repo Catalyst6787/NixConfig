@@ -8,6 +8,7 @@
     bemenu
     wofi
     fuzzel
+    helix
   ];
 
   services.udiskie = {
