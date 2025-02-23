@@ -69,6 +69,13 @@
       };
     };
     command-not-found.enable = false;
+    kitty = {
+      enable = true;
+      themeFile = "Dracula";
+      settings = {
+        confirm_os_window_close = 0;
+      };
+    };
     # some other programs
 
   };
