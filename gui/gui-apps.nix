@@ -9,5 +9,9 @@
     spotify
     freetube
     gparted
+    calibre
+    qbittorrent
+    dolphin
+    vlc
   ];
 }

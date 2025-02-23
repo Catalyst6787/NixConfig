@@ -11,6 +11,19 @@
     fuzzel
   ];
 
+  services.udiskie = {
+    enable = true;
+    settings = {
+        # workaround for
+        # https://github.com/nix-community/home-manager/issues/632
+        program_options = {
+            # replace with your favorite file manager
+            file_manager = "${pkgs.dolphin}/bin/dolphin";
+	};
+    };
+  };
+
+
   programs = {
     git = {
       enable = true;
@@ -69,6 +82,7 @@
     package = pkgs.rose-pine-cursor;
     size = 24;
   };
+
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
