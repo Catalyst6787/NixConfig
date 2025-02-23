@@ -11,8 +11,8 @@
     gparted
     calibre
     qbittorrent
-    dolphin
-    vlc
+    nautilus
     mpv
+    eog
   ];
 }
