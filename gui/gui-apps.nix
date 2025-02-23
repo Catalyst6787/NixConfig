@@ -13,5 +13,6 @@
     qbittorrent
     dolphin
     vlc
+    mpv
   ];
 }
