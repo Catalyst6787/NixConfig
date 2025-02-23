@@ -21,6 +21,7 @@
 	};
     };
   };
+  services.dunst.enable = true;
 
 
   programs = {
@@ -67,7 +68,6 @@
       };
     };
     command-not-found.enable = false;
-
     # some other programs
 
   };
