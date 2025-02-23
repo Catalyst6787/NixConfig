@@ -3,7 +3,6 @@
 {
   home.username = "oldcat";
   home.homeDirectory = "/home/oldcat";
-  
   home.packages = with pkgs; [
     fastfetch
     bemenu
@@ -39,6 +38,7 @@
         g = "git";
         gc = "gcc -g -Wall -Wextra -Werror";
         rs = "sudo nixos-rebuild switch --flake ~/nix"; # expects flake to be in /home/user/nix
+	update = "sudo nix flake update";
       };
     };
     neovim = {
@@ -66,6 +66,8 @@
 	colors.promt = "282A36ff";
       };
     };
+    command-not-found.enable = false;
+
     # some other programs
 
   };
