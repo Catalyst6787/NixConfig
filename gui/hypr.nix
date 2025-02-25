@@ -10,6 +10,8 @@
     hyprpolkitagent
     waybar
     dunst
+    eww
+    hyprpaper
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

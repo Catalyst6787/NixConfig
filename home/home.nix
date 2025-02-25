@@ -24,6 +24,17 @@
   };
   services.dunst.enable = true;
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
+      preload =
+        [ "~/custom/wallpapers/dracula/first-collection/nixos.png" ];
+      wallpaper = [ "eDP-1,~/custom/wallpapers/dracula/first-collection/nixos.png" ];
+    };
+  };
 
   programs = {
     git = {
@@ -41,6 +52,7 @@
         gc = "gcc -g -Wall -Wextra -Werror";
         rs = "sudo nixos-rebuild switch --flake ~/nix"; # expects flake to be in /home/user/nix
 	update = "sudo nix flake update";
+	cat="bat";
       };
     };
     neovim = {
@@ -50,10 +62,12 @@
       defaultEditor = true;
       plugins = [
         pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+        pkgs.vimPlugins.dracula-nvim
       ];
       extraConfig = ''
         set number relativenumber
 	set nowrap
+	colorscheme dracula
       '';
     };
     fuzzel = {
