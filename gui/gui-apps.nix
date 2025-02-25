@@ -14,5 +14,7 @@
     nautilus
     mpv
     eog
+    localsend
   ];
+  fonts.packages = with pkgs; [ nerdfonts ];
 }
