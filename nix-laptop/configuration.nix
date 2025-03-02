@@ -31,10 +31,10 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "fr";
-  };
+  # services.xserver.xkb = {
+  #   layout = "ch";
+  #   variant = "fr";
+  # };
 
   # Configure console keymap
   console.keyMap = "fr_CH";

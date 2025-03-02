@@ -18,7 +18,8 @@
         modules = [
           # import stuff here
           ./nix-laptop/configuration.nix
-	  ./gui/gui.nix
+          ./gui/gui.nix
+          ./lafayette/lafayette.nix
 
           home-manager.nixosModules.home-manager
           {
