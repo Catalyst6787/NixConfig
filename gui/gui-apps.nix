@@ -15,6 +15,7 @@
     mpv
     eog
     localsend
+    webcord
   ];
   fonts.packages = with pkgs; [ nerdfonts ];
 }
