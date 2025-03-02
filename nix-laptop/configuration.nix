@@ -37,7 +37,9 @@
   # };
 
   # Configure console keymap
-  console.keyMap = "fr_CH";
+  # console.keyMap = "fr_CH";
+  console.useXkbConfig = true;
+  # console.keyMap = "lafayette";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.oldcat = {
