@@ -9,6 +9,10 @@
     wofi
     fuzzel
     helix
+    gnumake
+  ];
+  imports = [
+    ./waybar.nix
   ];
 
   services.udiskie = {
@@ -55,21 +59,20 @@
 	cat="bat";
       };
     };
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      defaultEditor = true;
-      plugins = [
-        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-        pkgs.vimPlugins.dracula-nvim
-      ];
-      extraConfig = ''
-        set number relativenumber
-	set nowrap
-	colorscheme dracula
-      '';
-    };
+ #    neovim = {
+ #      enable = true;
+ #      viAlias = true;
+ #      vimAlias = true;
+ #      plugins = [
+ #        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+ #        pkgs.vimPlugins.dracula-nvim
+ #      ];
+ #      extraConfig = ''
+ #        set number relativenumber
+	# set nowrap
+	# colorscheme dracula
+ #      '';
+ #    };
     fuzzel = {
       enable = true;
       settings = {
@@ -90,6 +93,14 @@
         confirm_os_window_close = 0;
       };
     };
+    helix = {
+      enable = true;
+      defaultEditor = true;
+      settings = {
+        theme = "dracula";
+      };
+    };
+
     # some other programs
 
   };
