@@ -11,9 +11,20 @@
     mainBar = {
       layer = "top";
       position = "top";
-    modules-left = [ "hyprland/workspaces" "custom/media" "custom/wifi" "battery" "custom/clock" ];
+    modules-left = [ "hyprland/workspaces" "pulseaudio" "custom/media" ];
+    modules-center = [ "custom/clock" ];
+    modules-right = [ "custom/wifi" "battery" ];
     "hyprland/workspaces" = {
       disable-scroll = false;
+    };
+    "pulesaudio" = {
+      format = "{volume}% {icon}";
+      format-bluethooth = "{volume}% {icon}";
+      format-muted = "";
+      format-icons = {
+        headphone = "";
+        default = [ "" "" ];
+      };
     };
     "custom/media" = {
       interval = 1;
