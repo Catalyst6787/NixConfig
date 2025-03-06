@@ -11,7 +11,7 @@
     mainBar = {
       layer = "top";
       position = "top";
-    modules-left = [ "hyprland/workspaces" "custom/media" "custom/wifi" "custom/battery" "custom/clock" ];
+    modules-left = [ "hyprland/workspaces" "custom/media" "custom/wifi" "battery" "custom/clock" ];
     "hyprland/workspaces" = {
       disable-scroll = false;
     };
@@ -24,14 +24,14 @@
     "custom/wifi" = {
       interval = 50;
       exec = pkgs.writeShellScript "getwifi" ''
-      nmcli -t -f ACTIVE,SSID dev wifi | grep 'yes' | cut -d':' -f2
+      nmcli -t -f ACTIVE,SSID dev wifi | grep 'yes' | cut -d':' -f2  
       '';
     };
-    "custom/battery" = {
-      interval = 30;
-      exec = pkgs.writeShellScript "getbattery" ''
-      acpi -b | grep -P -o '[0-9]+(?=%)'
-      '';
+    "battery" = {
+      bat = "BAT0";
+      interval = 60;
+      format = "{capacity}% {icon}";
+      format-icons = ["" "" "" "" ""];
     };
     "custom/clock" = {
       interval = 1;
