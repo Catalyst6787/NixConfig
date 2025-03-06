@@ -55,8 +55,9 @@
         g = "git";
         gc = "gcc -g -Wall -Wextra -Werror";
         rs = "sudo nixos-rebuild switch --flake ~/nix"; # expects flake to be in /home/user/nix
-	update = "sudo nix flake update";
-	cat="bat";
+        update = "sudo nix flake update";
+      	cat="bat";
+        vim="hx";
       };
     };
  #    neovim = {
@@ -123,10 +124,3 @@
   programs.home-manager.enable = true;
   
 }
-
-      
-
-
-  
-  
-  
