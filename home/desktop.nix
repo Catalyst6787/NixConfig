@@ -1,0 +1,84 @@
+{ config, pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    fastfetch
+    bemenu
+    wofi
+    fuzzel
+    # CODE
+    gnumake
+    rocmPackages_5.llvm.clang-tools-extra
+    lldb_19
+    docker-compose-language-service
+    yaml-language-server
+    gopls
+    delve
+    marksman
+    nil
+    python312Packages.python-lsp-server
+    rust-analyzer
+    zls
+  ];
+  imports = [
+  ];
+  services.udiskie = {
+    enable = true;
+    settings = {
+        # workaround for
+        # https://github.com/nix-community/home-manager/issues/632
+        program_options = {
+            # replace with your favorite file manager
+            file_manager = "${pkgs.dolphin}/bin/dolphin";
+	};
+    };
+  };
+  services.dunst.enable = true;
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
+      preload =
+        [ "~/custom/wallpapers/dracula/first-collection/nixos.png" ];
+      wallpaper = [ "eDP-1,~/custom/wallpapers/dracula/first-collection/nixos.png" ];
+    };
+  };
+
+  programs = {
+    fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+      	  terminal = "${pkgs.kitty}/bin/kitty";
+      	  layer = "overlay";
+      	};
+        colors.background = "6272a4ff";
+      	colors.text = "282A36ff";
+      	colors.promt = "282A36ff";
+      };
+    };
+    command-not-found.enable = false;
+    kitty = {
+      enable = true;
+      themeFile = "Dracula";
+      settings = {
+        confirm_os_window_close = 0;
+      };
+    };
+    # some other programs
+  };
+  gtk.enable = true;
+  gtk.theme = {
+    name = "dracula-theme";
+    package = pkgs.arc-theme;
+  };
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "BreezeX-RosePine-Linux";
+    package = pkgs.rose-pine-cursor;
+    size = 24;
+  };
+}
