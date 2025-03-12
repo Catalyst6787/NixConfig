@@ -20,6 +20,7 @@
           ./nix-laptop/configuration.nix
           ./gui/gui.nix
           ./lafayette/lafayette.nix
+          ./essentials/essentials.nix
 
           home-manager.nixosModules.home-manager
           {
