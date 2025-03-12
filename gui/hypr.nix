@@ -16,6 +16,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.udisks2.enable = true;
+  services.getty.autologinUser = "oldcat";
 
   qt.enable = true;
 }

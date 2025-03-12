@@ -48,6 +48,7 @@
   };
 
   programs = {
+    fish.loginShellInit = "Hyprland";
     fuzzel = {
       enable = true;
       settings = {
