@@ -6,6 +6,7 @@
     bemenu
     wofi
     fuzzel
+    vlc
     # CODE
     gnumake
     rocmPackages_5.llvm.clang-tools-extra
@@ -74,6 +75,10 @@
     name = "dracula-theme";
     package = pkgs.arc-theme;
   };
+  qt.enable = true;
+  qt.platformTheme.name = "gtk";
+  qt.style.name = "dracula";
+  qt.style.package = pkgs.dracula-qt5-theme;
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

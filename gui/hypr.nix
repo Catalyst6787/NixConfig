@@ -17,6 +17,5 @@
 
   services.udisks2.enable = true;
 
-
   qt.enable = true;
 }
