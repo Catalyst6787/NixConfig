@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     gnumake
-    rocmPackages_5.llvm.clang-tools-extra
+    llvmPackages_19.clang-tools
     gccgo14
     lldb_19
     docker-compose-language-service
@@ -13,10 +13,11 @@
     marksman
     nil
     python312Packages.python-lsp-server
-    # rust-analyzer
+    rust-analyzer
     zls
-    rustup
-    # cargo
+    # rustup
+    cargo
+    valgrind
   ];
   imports = [
   ];
