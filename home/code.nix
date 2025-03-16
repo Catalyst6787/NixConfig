@@ -18,6 +18,7 @@
     # rustup
     cargo
     valgrind
+    vscode-langservers-extracted
   ];
   imports = [
   ];
