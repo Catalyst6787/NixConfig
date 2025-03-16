@@ -11,7 +11,7 @@
     mainBar = {
       layer = "top";
       position = "top";
-    modules-left = [ "hyprland/workspaces" "pulseaudio" "custom/media" ];
+    modules-left = [ "hyprland/workspaces" "pulseaudio" "custom/media" "backlight" ];
     modules-center = [ "custom/clock" ];
     modules-right = [ "custom/wifi" "battery" ];
     "hyprland/workspaces" = {
@@ -50,6 +50,11 @@
       date '+%H:%M'
       '';
     }; 
+    "backlight" = {
+      device = "intel_backlight";
+      format = "{percent}% {icon}";
+      format-icons = [ "" "" ];
+    };
     };
   };
 }
