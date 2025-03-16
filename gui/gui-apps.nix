@@ -27,4 +27,5 @@
     via
   ];
   hardware.keyboard.qmk.enable = true;
+  networking.networkmanager.enable = true;
 }

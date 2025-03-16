@@ -7,6 +7,7 @@
     wofi
     fuzzel
     vlc
+    networkmanagerapplet
   ];
   imports = [
   ];
