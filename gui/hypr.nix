@@ -12,6 +12,7 @@
     dunst
     eww
     hyprpaper
+    brightnessctl
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
