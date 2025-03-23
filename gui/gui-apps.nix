@@ -18,6 +18,7 @@
     webcord
     vial
     via
+    whatsie
   ];
   fonts.packages = with pkgs; [ nerdfonts ];
   services.udev.packages = with pkgs; [
