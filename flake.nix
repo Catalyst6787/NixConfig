@@ -28,7 +28,42 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             
-            home-manager.users.oldcat = import ./home/home.nix;
+            home-manager.users.oldcat = import ./home.nix;
+          }
+        ];
+      };
+      # generic-desktop = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   modules = [
+      #     # import stuff here
+      #     ./device/configuration.nix
+      #     ./gui/gui.nix
+      #     ./lafayette/lafayette.nix
+      #     ./essentials/essentials.nix
+            # if laptop ./laptop.nix
+
+      #     home-manager.nixosModules.home-manager
+      #     {
+      #       home-manager.useGlobalPkgs = true;
+      #       home-manager.useUserPackages = true;
+            
+      #       home-manager.users.oldcat = import ./home.nix;
+      #     }
+      #   ];
+      # };
+      generic-headless = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # import stuff here
+          ./nix-laptop/configuration.nix
+          ./essentials/essentials.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            home-manager.users.oldcat = import ./home-headless.nix;
           }
         ];
       };
