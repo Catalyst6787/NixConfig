@@ -57,6 +57,7 @@
           # import stuff here
           ./nix-server/configuration.nix
           ./essentials/essentials.nix
+          ./server/server.nix
 
           home-manager.nixosModules.home-manager
           {
