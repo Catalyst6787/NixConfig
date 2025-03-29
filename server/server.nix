@@ -10,6 +10,8 @@
     docker.enable = true;
     docker.enableOnBoot = true;
   };
+  users.users.oldcat.extraGroups = [ "docker" ];
+
 
 
   services.openssh = {
