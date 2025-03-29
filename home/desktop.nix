@@ -8,8 +8,6 @@
     fuzzel
     vlc
     networkmanagerapplet
-    tor
-    tor-browser
   ];
   imports = [
   ];

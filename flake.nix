@@ -8,9 +8,10 @@
 
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nix-flatpak, ... }: {
     nixosConfigurations = {
       #v-- 'nixos' being the hostname
       nix-laptop = nixpkgs.lib.nixosSystem {
@@ -22,7 +23,7 @@
           ./lafayette/lafayette.nix
           ./essentials/essentials.nix
           ./laptop.nix
-
+          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

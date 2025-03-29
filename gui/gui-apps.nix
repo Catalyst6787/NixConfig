@@ -27,6 +27,12 @@
     vial
     via
   ];
+  services.flatpak = {
+    enable = true;
+    packages = [
+      { appId = "org.jdownloader.JDownloader"; origin = "flathub"; }
+    ];
+  };
   hardware.keyboard.qmk.enable = true;
   networking.networkmanager.enable = true;
 }
