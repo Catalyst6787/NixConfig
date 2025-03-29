@@ -11,6 +11,7 @@
   imports = [
     home/essentials.nix
     home/code.nix
+    home/server.nix
   ];
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
