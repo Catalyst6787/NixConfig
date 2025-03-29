@@ -52,12 +52,13 @@
       #     }
       #   ];
       # };
-      generic-headless = nixpkgs.lib.nixosSystem {
+      nix-server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           # import stuff here
-          ./nix-laptop/configuration.nix
+          ./nix-server/configuration.nix
           ./essentials/essentials.nix
+          ./server/server.nix
 
           home-manager.nixosModules.home-manager
           {
