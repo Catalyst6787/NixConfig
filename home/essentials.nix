@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
   helix
   git
+  pkg-config
   ];
   imports = [
   ];
@@ -36,6 +37,9 @@
       defaultEditor = true;
       settings = {
         theme = "dracula";
+        # editor.whitespace = {
+          # render = "all";
+        # };
       };
     };
     # some other programs

@@ -53,6 +53,7 @@
     kitty = {
       enable = true;
       themeFile = "Dracula";
+      shellIntegration.enableFishIntegration = true;
       settings = {
         confirm_os_window_close = 0;
       };

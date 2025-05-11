@@ -19,6 +19,11 @@
     cargo
     valgrind
     vscode-langservers-extracted
+
+    # minilibx
+    # xorg.libXext
+    # xorg.libX11
+    pkg-config
   ];
   imports = [
   ];
