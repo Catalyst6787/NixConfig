@@ -6,6 +6,8 @@
     bemenu
     wofi
     fuzzel
+    hyprpanel
+    upower
     vlc
     networkmanagerapplet
   ];
@@ -19,10 +21,10 @@
         program_options = {
             # replace with your favorite file manager
             file_manager = "${pkgs.dolphin}/bin/dolphin";
-	};
+	    };
     };
   };
-  services.dunst.enable = true;
+  # services.dunst.enable = false;
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -57,6 +59,7 @@
       settings = {
         confirm_os_window_close = 0;
       };
+
     };
     # some other programs
   };

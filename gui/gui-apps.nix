@@ -20,6 +20,7 @@
     via
     whatsie
   ];
+  programs.steam.enable = true;
   fonts.packages = with pkgs; [ nerdfonts ];
   services.udev.packages = with pkgs; [
     qmk

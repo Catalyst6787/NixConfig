@@ -9,7 +9,7 @@
     hyprcursor
     hyprpolkitagent
     waybar
-    dunst
+    # dunst
     eww
     hyprpaper
     brightnessctl
@@ -17,6 +17,7 @@
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
+  services.upower.enable = true;
 
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";

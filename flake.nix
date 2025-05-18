@@ -9,9 +9,16 @@
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
     flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nix-flatpak, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    nix-flatpak,
+    hyprpanel,
+    ...
+    }: {
     nixosConfigurations = {
       #v-- 'nixos' being the hostname
       nix-laptop = nixpkgs.lib.nixosSystem {
@@ -23,6 +30,7 @@
           ./lafayette/lafayette.nix
           ./essentials/essentials.nix
           ./laptop.nix
+          {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
