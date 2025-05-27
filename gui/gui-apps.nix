@@ -21,7 +21,14 @@
     whatsie
   ];
   programs.steam.enable = true;
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.agave
+    nerd-fonts.caskaydia-mono
+    nerd-fonts.caskaydia-cove
+  ];
+
   services.udev.packages = with pkgs; [
     qmk
     qmk-udev-rules

@@ -24,6 +24,8 @@
     # xorg.libXext
     # xorg.libX11
     pkg-config
+    # sbcl
+    # roswell
   ];
   imports = [
   ];

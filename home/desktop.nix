@@ -20,7 +20,7 @@
         # https://github.com/nix-community/home-manager/issues/632
         program_options = {
             # replace with your favorite file manager
-            file_manager = "${pkgs.dolphin}/bin/dolphin";
+            file_manager = "${pkgs.kdePackages.dolphin}/bin/dolphin";
 	    };
     };
   };
