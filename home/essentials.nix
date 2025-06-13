@@ -30,6 +30,10 @@
         update = "sudo nix flake update";
       	cat="bat";
         vim="hx";
+        ms="make -s";
+        c="clear";
+        mfs="make fclean -s";
+        v="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all";
       };
     };
     command-not-found.enable = false;
@@ -38,9 +42,17 @@
       defaultEditor = true;
       settings = {
         theme = "dracula";
-        # editor.whitespace = {
-          # render = "all";
-        # };
+        editor = {
+          whitespace.render = {
+            space = "all";
+            tab = "all";
+            nbsp = "none";
+            nnbsp = "none";
+            newline = "none";
+          };
+          smart-tab.enable = false;
+          indent-guides.render = true;
+        };
       };
     };
     # some other programs

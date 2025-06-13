@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     fastfetch
     bemenu
-    wofi
     fuzzel
     hyprpanel
     upower
@@ -13,6 +12,7 @@
     obsidian
     nushell
     bitwarden-desktop
+    zathura
   ];
   imports = [
   ];
@@ -43,9 +43,14 @@
       wallpaper = [ "eDP-1,~/custom/wallpapers/lain.jpg" ];
     };
   };
-
+  
   programs = {
     fish.loginShellInit = "Hyprland";
+    rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+      theme = "~/nix/home/templates/rofi-dracula.rasi";
+    };
     fuzzel = {
       enable = true;
       settings = {
