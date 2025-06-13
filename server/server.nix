@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     docker
     docker-compose
+    os-prober
+    apacheHttpd
   ];
   virtualisation = {
     containers.enable = true;
@@ -12,6 +14,15 @@
   };
   users.users.oldcat.extraGroups = [ "docker" ];
 
+  boot.kernel.sysctl = { "vm.swapiness" = 10;};
+  boot.kernel.sysctl = { "vm.vfs_cache.pressure" = 50;};
+  boot.kernel.sysctl = { "fs.inotify.max_user_watches" = 262144;};
+
+
+  networking.firewall = {
+    enable = false;
+    allowedTCPPorts = [ 80 443 ];
+  };
 
 
   services.openssh = {

@@ -5,6 +5,7 @@
   helix
   git
   pkg-config
+  nushell
   ];
   imports = [
   ];
