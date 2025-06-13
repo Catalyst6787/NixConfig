@@ -26,6 +26,7 @@
     XDG_STATE_HOME  = "$HOME/.local/state";
     XDG_PICTURES_DIR = "$HOME/Pictures";
   };
+  hardware.graphics.enable = true;
 
 
 

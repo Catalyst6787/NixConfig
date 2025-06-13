@@ -22,6 +22,9 @@
     steel
     gdb
     man-pages
+    xorg.libX11
+    xorg.libXext
+    bear
   ];
   imports = [
   ];
