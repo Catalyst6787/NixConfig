@@ -10,9 +10,13 @@
     upower
     vlc
     networkmanagerapplet
+    obsidian
+    nushell
+    bitwarden-desktop
   ];
   imports = [
   ];
+  # services.udisks2.enable = true;
   services.udiskie = {
     enable = true;
     settings = {
@@ -22,6 +26,9 @@
             # replace with your favorite file manager
             file_manager = "${pkgs.kdePackages.dolphin}/bin/dolphin";
 	    };
+    automount = true;
+    notify = true;
+    tray = "auto";
     };
   };
   # services.dunst.enable = false;
@@ -32,8 +39,8 @@
       splash = false;
       splash_offset = 2.0;
       preload =
-        [ "~/custom/wallpapers/dracula/first-collection/nixos.png" ];
-      wallpaper = [ "eDP-1,~/custom/wallpapers/dracula/first-collection/nixos.png" ];
+        [ "~/custom/wallpapers/lain.jpg" ];
+      wallpaper = [ "eDP-1,~/custom/wallpapers/lain.jpg" ];
     };
   };
 
@@ -51,7 +58,6 @@
       	colors.promt = "282A36ff";
       };
     };
-    command-not-found.enable = false;
     kitty = {
       enable = true;
       themeFile = "Dracula";
