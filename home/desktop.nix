@@ -13,6 +13,9 @@
     nushell
     bitwarden-desktop
     zathura
+    rofi-bluetooth
+    rofi-power-menu
+    rofi-network-manager
   ];
   imports = [
   ];
@@ -50,6 +53,15 @@
       enable = true;
       package = pkgs.rofi-wayland;
       theme = "~/nix/home/templates/rofi-dracula.rasi";
+      plugins = [
+        pkgs.rofi-calc
+        pkgs.rofi-games
+        pkgs.rofi-power-menu
+        pkgs.rofi-file-browser
+        pkgs.rofi-network-manager
+      ];
+      terminal = "kitty";
+      
     };
     fuzzel = {
       enable = true;
