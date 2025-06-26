@@ -39,6 +39,7 @@
     enable = true;
     packages = [
       { appId = "org.jdownloader.JDownloader"; origin = "flathub"; }
+      { appId = "de.schmidhuberj.tubefeeder"; origin = "flathub"; }
     ];
   };
   hardware.keyboard.qmk.enable = true;

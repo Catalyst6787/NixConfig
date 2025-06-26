@@ -16,6 +16,7 @@
     rofi-bluetooth
     rofi-power-menu
     rofi-network-manager
+    yt-dlp
   ];
   imports = [
   ];

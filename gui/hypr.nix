@@ -14,6 +14,12 @@
     hyprpaper
     brightnessctl
     hyprshot
+    xdg-desktop-portal-hyprland
+    grim
+    slurp
+    wl-clipboard-rs
+    grimblast
+    
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
@@ -34,4 +40,5 @@
   services.getty.autologinUser = "oldcat";
 
   qt.enable = true;
+
 }
