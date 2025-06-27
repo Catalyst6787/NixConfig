@@ -10,6 +10,7 @@
     # flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = inputs @ {
@@ -37,7 +38,10 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             
-            home-manager.users.oldcat = import ./home.nix;
+            home-manager.users.oldcat.imports = [
+              ./home.nix
+              inputs.spicetify-nix.homeManagerModules.default
+            ];
           }
         ];
       };
