@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, spicetify, ... }:
 
 {
   home.packages = with pkgs; [
@@ -85,6 +85,7 @@
       };
 
     };
+    
     # some other programs
   };
   gtk.enable = true;

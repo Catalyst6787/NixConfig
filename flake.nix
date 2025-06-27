@@ -18,6 +18,7 @@
     home-manager,
     nix-flatpak,
     hyprpanel,
+    spicetify-nix,
     ...
     }: {
     nixosConfigurations = {
@@ -33,17 +34,17 @@
           ./laptop.nix
           {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nix-flatpak.nixosModules.nix-flatpak
+          inputs.spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            
             home-manager.users.oldcat.imports = [
               ./home.nix
-              inputs.spicetify-nix.homeManagerModules.default
             ];
           }
         ];
+        specialArgs = { inherit inputs; };
       };
       # generic-desktop = nixpkgs.lib.nixosSystem {
       #   system = "x86_64-linux";

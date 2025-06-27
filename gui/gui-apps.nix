@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -28,6 +28,16 @@
     nerd-fonts.caskaydia-mono
     nerd-fonts.caskaydia-cove
   ];
+  programs.spicetify = let
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  in
+  {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      keyboardShortcut
+    ];
+    theme = spicePkgs.themes.dracula;
+  };
 
   services.udev.packages = with pkgs; [
     qmk
