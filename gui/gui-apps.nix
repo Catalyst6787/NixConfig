@@ -20,6 +20,12 @@
     via
     whatsie
   ];
+  networking.firewall.allowedTCPPorts = [
+    53317
+  ];
+  networking.firewall.allowedUDPPorts = [
+    53317
+  ];
   programs.steam.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code

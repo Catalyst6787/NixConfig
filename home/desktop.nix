@@ -17,6 +17,8 @@
     rofi-power-menu
     rofi-network-manager
     yt-dlp
+    prismlauncher
+    solaar
   ];
   imports = [
   ];
