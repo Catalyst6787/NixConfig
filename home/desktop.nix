@@ -43,10 +43,9 @@
     settings = {
       ipc = "on";
       splash = false;
-      splash_offset = 2.0;
       preload =
-        [ "~/custom/wallpapers/lain.jpg" ];
-      wallpaper = [ "eDP-1,~/custom/wallpapers/lain.jpg" ];
+        [ "~/custom/wallpapers/dracula-leaves-6272a4-dark.png"  ];
+      wallpaper = [ "eDP-1,~/custom/wallpapers/dracula-leaves-6272a4-dark.png" ];
     };
   };
   
