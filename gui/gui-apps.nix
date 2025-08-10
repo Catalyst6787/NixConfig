@@ -22,9 +22,11 @@
   ];
   networking.firewall.allowedTCPPorts = [
     53317
+    9090
   ];
   networking.firewall.allowedUDPPorts = [
     53317
+    9090
   ];
   programs.steam.enable = true;
   fonts.packages = with pkgs; [

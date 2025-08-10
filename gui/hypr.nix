@@ -19,7 +19,7 @@
     slurp
     wl-clipboard-rs
     grimblast
-    
+    pamixer
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";

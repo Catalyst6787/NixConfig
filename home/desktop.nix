@@ -19,6 +19,7 @@
     yt-dlp
     prismlauncher
     solaar
+    vscode-fhs
   ];
   imports = [
   ];
@@ -84,7 +85,11 @@
       settings = {
         confirm_os_window_close = 0;
       };
-
+      # cursor_trail = 10;
+      # keybindings = {
+      #   "ctrl+shift+plus" = "change_font_size all +2.0";
+      #   "ctrl+shift+minus" = "change_font_size all -2.0";
+      # };
     };
     
     # some other programs
