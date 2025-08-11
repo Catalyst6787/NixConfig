@@ -33,7 +33,7 @@
           ./essentials/essentials.nix
           ./laptop.nix
           # tmp enable docker – remove later
-          ./docker.nix 
+          # ./docker.nix 
           # {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
           nix-flatpak.nixosModules.nix-flatpak
           inputs.spicetify-nix.nixosModules.default
