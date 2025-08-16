@@ -6,6 +6,8 @@
   git
   pkg-config
   nushell
+  zoxide
+  fzf
   ];
   imports = [
   ];
@@ -35,6 +37,10 @@
         mfs="make fclean -s";
         v="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all";
       };
+    };
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
     };
     command-not-found.enable = false;
     helix = {
