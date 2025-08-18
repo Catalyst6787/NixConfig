@@ -8,6 +8,7 @@
   nushell
   zoxide
   fzf
+  ripgrep
   ];
   imports = [
   ];
