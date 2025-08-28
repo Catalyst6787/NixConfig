@@ -13,4 +13,5 @@
   documentation.dev.enable = true;
   documentation.man.generateCaches = false;
   console.useXkbConfig = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

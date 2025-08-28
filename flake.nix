@@ -29,6 +29,7 @@
           ./laptop.nix
           # tmp enable docker – remove later
           ./docker.nix 
+          ./keyboard.nix
           nix-flatpak.nixosModules.nix-flatpak
           inputs.spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager

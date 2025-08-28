@@ -20,6 +20,8 @@
     prismlauncher
     solaar
     vscode-fhs
+    brave
+    udiskie
   ];
   imports = [
   ];
@@ -31,7 +33,7 @@
         # https://github.com/nix-community/home-manager/issues/632
         program_options = {
             # replace with your favorite file manager
-            file_manager = "${pkgs.kdePackages.dolphin}/bin/dolphin";
+            file_manager = "${pkgs.nautilus}/bin/nautilus";
 	    };
     automount = true;
     notify = true;
@@ -45,8 +47,8 @@
       ipc = "on";
       splash = false;
       preload =
-        [ "~/custom/wallpapers/dracula-leaves-6272a4-dark.png"  ];
-      wallpaper = [ "eDP-1,~/custom/wallpapers/dracula-leaves-6272a4-dark.png" ];
+        [ "~/custom/wallpapers/second-collection/leaves/dracula-leaves-6272a4-dark.png" ];
+      wallpaper = [ "eDP-1, ~/custom/wallpapers/second-collection/leaves/dracula-leaves-6272a4-dark.png" ];
     };
   };
   

@@ -9,6 +9,7 @@
   zoxide
   fzf
   ripgrep
+  stow
   ];
   imports = [
   ];
@@ -38,6 +39,12 @@
         mfs="make fclean -s";
         v="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all";
       };
+    };
+    direnv = {
+      enable = true;
+    };
+    yazi = {
+      enable = true;
     };
     zoxide = {
       enable = true;
