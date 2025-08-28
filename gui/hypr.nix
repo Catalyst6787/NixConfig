@@ -20,6 +20,7 @@
     wl-clipboard-rs
     grimblast
     pamixer
+    hyprlock
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";

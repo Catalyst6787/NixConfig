@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  boot.initrd.kernelModules = [ "usbhid" "xhci_pci" "xhci_hcd" ];
   boot.initrd.availableKernelModules = [
     "xhci_pci"   # xHCI USB 3 controller driver
     "xhci_hcd"   # xHCI core

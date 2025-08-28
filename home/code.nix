@@ -25,6 +25,7 @@
     xorg.libX11
     xorg.libXext
     bear
+    hyprls
   ];
   imports = [
   ];
