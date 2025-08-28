@@ -31,67 +31,37 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "ch";
-  #   variant = "fr";
-  # };
+  #services.xserver.xkb = {
+  #  layout = "ch";
+  #  variant = "fr";
+  #};
 
   # Configure console keymap
   # console.keyMap = "fr_CH";
   console.useXkbConfig = true;
-  # console.keyMap = "lafayette";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.oldcat = {
     isNormalUser = true;
     description = "oldcat";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
     packages = with pkgs; [];
+    shell = pkgs.fish;
   };
+
+  # Enable automatic login for the user.
+  services.getty.autologinUser = "oldcat";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim 
-  wget
-  git
-  fish
-  zellij
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   ];
-  
-  programs.fish.enable = true;
-  services.dbus.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
-      intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
-      vpl-gpu-rt
-    ];
-  };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Optionally, set the environment variable
-
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  #hardware.pulseaudio.enable = true;
-  services.blueman.enable = true;
-
-  nix.optimise.automatic = true;
-  nix.gc = {
-	automatic = true;
-	dates = "weekly";
-	options = "--delete-older-than 30d";
-  };
-  # documentation.man.generateCaches = false;
-  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -117,6 +87,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
