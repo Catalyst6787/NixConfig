@@ -7,13 +7,16 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    wakatime-ls.url = "github:mrnossiom/wakatime-ls";
+    wakatime-ls.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
     nixpkgs,
     home-manager,
-     nix-flatpak,
+    nix-flatpak,
     spicetify-nix,
+    wakatime-ls,
     ...
     }: {
     nixosConfigurations = {
@@ -30,12 +33,14 @@
           # tmp enable docker – remove later
           ./docker.nix 
           ./keyboard.nix
+          # ./appimages.nix
           nix-flatpak.nixosModules.nix-flatpak
           inputs.spicetify-nix.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.oldcat.imports = [
               ./home.nix
             ];
@@ -74,7 +79,6 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            
             home-manager.users.oldcat = import ./home-headless.nix;
           }
         ];

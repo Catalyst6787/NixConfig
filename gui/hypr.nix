@@ -34,6 +34,7 @@
     XDG_PICTURES_DIR = "$HOME/Pictures";
   };
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 
 
 

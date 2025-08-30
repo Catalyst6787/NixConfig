@@ -20,7 +20,6 @@
     prismlauncher
     solaar
     vscode-fhs
-    brave
     udiskie
   ];
   imports = [

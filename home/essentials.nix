@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -10,6 +10,8 @@
   fzf
   ripgrep
   stow
+  wakatime-cli
+  inputs.wakatime-ls.packages.${pkgs.system}.default
   ];
   imports = [
   ];
@@ -39,6 +41,43 @@
         mfs="make fclean -s";
         v="valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all";
       };
+      functions = {
+        wakatime_heartbeat = {
+          body =
+          # fish
+          ''
+          set cmd (string join ' ' $argv)
+          set project (current_project)
+
+          # echo "[DEBUG] wakatime_heartbeat: cmd='$cmd' project='$project'" >> ~/.wakatime-fish-debug.log
+
+          wakatime-cli \
+            --entity (pwd) \
+            --entity-type app \
+            --project $project \
+            --plugin "fish/1.0.0" \
+            --category coding
+            # --verbose >> ~/.wakatime-fish-debug.log 2>&1
+          '';
+          onEvent = "fish_preexec";
+        };
+        current_project = {
+          body =
+          # fish
+          ''
+          if git rev-parse --show-toplevel >/dev/null 2>&1
+            basename (git rev-parse --show-toplevel)
+          else
+            basename (pwd)
+          end
+          '';
+        };
+      };
+      shellInit =
+      #fish
+      ''
+      source ~/.config/fish/functions/wakatime_heartbeat.fish
+      '';
     };
     direnv = {
       enable = true;
@@ -68,6 +107,10 @@
           indent-guides.render = true;
         };
       };
+      extraConfig =
+      # toml
+      ''
+      '';
     };
     bat = {
       enable = true;
