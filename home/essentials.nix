@@ -105,13 +105,16 @@
           };
           smart-tab.enable = true;
           indent-guides.render = true;
+          };
         };
+        extraConfig =
+        # toml
+        ''
+          [editor.auto-save]
+          after-delay.enable = true
+          after-delay.timeout = 3000
+        '';
       };
-      extraConfig =
-      # toml
-      ''
-      '';
-    };
     bat = {
       enable = true;
       themes = {

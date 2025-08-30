@@ -26,6 +26,7 @@
     xorg.libXext
     bear
     hyprls
+    taplo
   ];
   imports = [
   ];
