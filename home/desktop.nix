@@ -112,4 +112,12 @@
     package = pkgs.rose-pine-cursor;
     size = 24;
   };
+  xdg.desktopEntries = {
+    retoswap = {
+      name = "RetoSwap";
+      genericName = "Crypto Exchange";
+      exec = "retoswap";
+      terminal = false;
+    };
+  };
 }

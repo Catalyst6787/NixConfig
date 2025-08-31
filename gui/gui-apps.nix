@@ -1,11 +1,15 @@
 { config, pkgs, inputs, ... }:
 
+let 
+	retoSwap = import ../appimages.nix { inherit pkgs; };
+in
 {
   environment.systemPackages = with pkgs; [
+    retoSwap
     bat
     kitty
     librewolf
-    stremio
+    # stremio
     spotify
     freetube
     gparted
@@ -18,7 +22,7 @@
     webcord
     vial
     via
-    whatsie
+    # whatsie
   ];
   networking.firewall.allowedTCPPorts = [
     53317
@@ -62,4 +66,6 @@
   };
   hardware.keyboard.qmk.enable = true;
   networking.networkmanager.enable = true;
+
+
 }

@@ -33,6 +33,7 @@
           # tmp enable docker – remove later
           ./docker.nix 
           ./keyboard.nix
+          # ./containers.nix
           # ./appimages.nix
           nix-flatpak.nixosModules.nix-flatpak
           inputs.spicetify-nix.nixosModules.default
