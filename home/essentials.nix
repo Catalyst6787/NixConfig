@@ -59,7 +59,7 @@
             --category coding
             # --verbose >> ~/.wakatime-fish-debug.log 2>&1
           '';
-          onEvent = "fish_preexec";
+          # onEvent = "fish_preexec";
         };
         current_project = {
           body =

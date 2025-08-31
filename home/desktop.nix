@@ -21,6 +21,7 @@
     solaar
     vscode-fhs
     udiskie
+    protonvpn-gui
   ];
   imports = [
   ];
